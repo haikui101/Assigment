@@ -11,6 +11,9 @@ if (hoursformat > 12)
 else if (hoursformat < 12)
 {
     Console.WriteLine($".A.M {hoursformat}:{minutesformat}");
+} else if (hoursformat == 12)
+{
+    Console.WriteLine($".P.M {hoursformat}:{minutesformat}");
 }
 
 // מטלה 5
