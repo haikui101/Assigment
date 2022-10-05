@@ -1,15 +1,23 @@
-﻿// מטלה 4
+// מטלה 4
 Console.WriteLine("Please enter the time: ");
 int hours = int.Parse(Console.ReadLine());
 int hoursformat = hours / 100;
 int minutesformat = hours % 100;
-if (hoursformat > 12)
+if (hoursformat > 12 && minutesformat < 10)
+{
+    hoursformat = hoursformat - 12;
+    Console.WriteLine($".P.M {hoursformat}:0{minutesformat}");
+} else if (hoursformat > 12 && minutesformat > 10)
 {
     hoursformat = hoursformat - 12;
     Console.WriteLine($".P.M {hoursformat}:{minutesformat}");
 }
-else if (hoursformat < 12)
+else if (hoursformat < 12 && minutesformat < 10) 
 {
+    Console.WriteLine($".A.M 0{hoursformat}:0{minutesformat}");
+} else if (hoursformat < 12 && minutesformat > 10)
+{
+    Console.WriteLine($".A.M 0{hoursformat}:{minutesformat}");
     Console.WriteLine($".A.M {hoursformat}:{minutesformat}");
 } else if (hoursformat == 12)
 {
